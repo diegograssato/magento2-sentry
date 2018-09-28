@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <type name="Magento\Framework\Logger\Monolog">
+        <arguments>
+            <argument name="handlers" xsi:type="array">
+                <item name="raven" xsi:type="object">DTuX\Sentry\Handler</item>
+                <item name="system" xsi:type="object">Magento\Framework\Logger\Handler\System</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="violuke\Sentry\Raven\Handler">
+        <arguments>
+            <argument name="ravenClient" xsi:type="object">DTuX\Sentry\Client</argument>
+            <argument name="level" xsi:type="string">300</argument>
+        </arguments>
+    </type>
+</config>
