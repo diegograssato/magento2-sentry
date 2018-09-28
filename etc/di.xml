@@ -8,7 +8,7 @@
             </argument>
         </arguments>
     </type>
-    <type name="violuke\Sentry\Raven\Handler">
+    <type name="DTuX\Sentry\Handler">
         <arguments>
             <argument name="ravenClient" xsi:type="object">DTuX\Sentry\Client</argument>
             <argument name="level" xsi:type="string">300</argument>

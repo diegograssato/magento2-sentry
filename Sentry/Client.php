@@ -35,14 +35,11 @@ class Client extends Raven_Client
             }
         }
         $this->setEnvironment($env['MAGE_MODE']);
-        exec('git describe --always', $version_mini_hash);
-        exec('git describe --tags --abbrev=0', $tag);
-
-        $this->tags_context([
-            'php_version' => phpversion(),
-            'git_commit' => $version_mini_hash,
-            'git_tag' => $tag
-        ]);
+        if(sizeof($env['tags']) > 0){
+            $tags                = $env['tags'];
+            $tags['php_version'] = phpversion(),
+            $client->tags_context($tags);
+        }
 
         parent::__construct($ravenDNS, $options);
 //        $this->install();
