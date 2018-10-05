@@ -3,14 +3,15 @@
     <type name="Magento\Framework\Logger\Monolog">
         <arguments>
             <argument name="handlers" xsi:type="array">
-                <item name="raven" xsi:type="object">DTuX\Sentry\Handler</item>
+                <item name="raven" xsi:type="object">DTuX\Sentry\Sentry\Handler</item>
                 <item name="system" xsi:type="object">Magento\Framework\Logger\Handler\System</item>
             </argument>
         </arguments>
     </type>
-    <type name="DTuX\Sentry\Handler">
+
+    <type name="DTuX\Sentry\Sentry\Handler">
         <arguments>
-            <argument name="ravenClient" xsi:type="object">DTuX\Sentry\Client</argument>
+            <argument name="ravenClient" xsi:type="object">DTuX\Sentry\Sentry\Client</argument>
             <argument name="level" xsi:type="string">300</argument>
         </arguments>
     </type>
