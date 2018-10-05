@@ -12,10 +12,10 @@
     },
     "autoload": {
         "psr-4": {
-            "DTuX\\Sentry\\": "Sentry"
+            "DTuX\\Sentry\\Sentry\\": "Sentry"
         },
         "psr-0": {
-            "DTuX\\Sentry\\": "Sentry"
+            "DTuX\\Sentry\\Sentry\\": "Sentry"
         },
         "files": [ "registration.php" ]
     }
